@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -164,12 +165,12 @@
 
             label = "fn";
             bindings = <
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none            &none          &none          &none          &none         &none
-&out OUT_USB     &out OUT_BLE     &out OUT_TOG     &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none            &none          &none          &none          &none         &none
-&rgb_ug RGB_TOG  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none            &kp LG(LBRC)     &kp LG(MINUS)  &kp LG(EQUAL)  &kp LG(RBRC)   &none         &none
-&none            &kp HASH         &none            &none            &none            &none            &rgb_ug RGB_TOG  &kp LG(LBKT)   &kp LG(RBKT)   &kp LG(GRAVE)  &none         &none
-&none            &none            &none            &kp BSPC         &kp ENTER        &none            &none            &none          &none          &none          &none
-                                                                                                      &kp C_PP         &kp C_NEXT     &kp K_VOL_UP   &kp C_PREV     &kp K_VOL_DN
+&bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none          &none          &none          &none          &none          &kp LG(LC(Q))
+&out OUT_USB     &out OUT_BLE  &out OUT_TOG  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF  &none          &none          &none          &none          &none          &none
+&rgb_ug RGB_TOG  &bl BL_TOG    &trans        &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFR  &kp LG(LBRC)   &kp LG(MINUS)  &kp LG(EQUAL)  &kp LG(RBRC)   &none          &none
+&none            &kp HASH      &none         &none            &none            &none            &bl BL_TOG     &kp LG(LBKT)   &kp LG(RBKT)   &kp LG(GRAVE)  &none          &none
+&none            &none         &none         &kp BSPC         &kp ENTER        &none            &none          &none          &none          &none          &none
+                                                                                                &kp LG(GRAVE)  &kp LG(RBRC)   &kp LG(EQUAL)  &kp LG(LBRC)   &kp LG(MINUS)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
